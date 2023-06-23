@@ -17,6 +17,11 @@ const connectToDatabase = async () => {
     }
 };
 
+/**
+ * Asynchronous function that connects to the database and starts the server.
+ *
+ * @return {Promise<void>} Resolves when the server has started listening on the specified port.
+ */
 const main = async () => {
   // Connect to database
   await connectToDatabase();
