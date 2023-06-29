@@ -7,13 +7,18 @@ export const getPersons = async (req, res) => {
 
 export const createPerson = async (req, res) => {
     console.log(req.body)
-    const { first_name, last_name, date_of_birth, dni, age } = req.body;
-    const person = await Persons.create({ 
-        first_name, 
-        last_name, 
-        date_of_birth, 
-        dni, 
-        age 
-    });
-    res.json(person)
+    try {
+        const { full_name, dni, phone, email, address, intruments } = req.body;
+        const person = await Persons.create({ 
+            full_name,
+            dni,
+            phone,
+            email,
+            address,
+            intruments,
+        });
+        res.json(person)
+    } catch (error) {
+        res.status(403).json({ message: error.message });
+    }
 }

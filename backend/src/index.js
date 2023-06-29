@@ -2,6 +2,7 @@ import app from './app.js';
 import {sequelize} from './config/db.js';
 import './apps/persons/models/Persons.js';
 
+
 const connectToDatabase = async () => {
     /**
     * Connects to the database using sequelize.authenticate() method.

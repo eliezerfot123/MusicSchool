@@ -8,24 +8,35 @@ export const Persons = sequelize.define('persons', {
         allowNull: false,
         primaryKey: true
     },
-    first_name: {
+    full_name: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    last_name: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    date_of_birth: {
-        type: DataTypes.DATE,
         allowNull: false
     },
     dni: {
         type: DataTypes.STRING,
+        allowNull: false, 
+        unique: true
+    },
+    phone: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    age: {
-        type: DataTypes.INTEGER,
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true, 
+        validate: {
+            isEmail: {
+              msg: "Email ya exíste",
+            }
+        }
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    intruments: {
+        type: DataTypes.STRING,
         allowNull: false
     }
 });
