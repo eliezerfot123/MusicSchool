@@ -5,32 +5,55 @@
             <div class="col-11 col-md-10 col-lg-9 col-xl-8 mx-auto">
                 <h3 class="fw-600 mb-4">Ingrese sus datos</h3>
                 <hr/>
-                <form >
+                <form id="form" method="post">
                     <div class="mb-3">
-                        <input type="text" class="form-control bg-light border-light" required placeholder="Introduzca Nombres y apellidos">
+                        <input type="text" name="full_name" id="full_name" class="form-control bg-light border-light" required placeholder="Introduzca Nombres y apellidos">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control bg-light border-light" required placeholder="Cédula de identidad">
+                        <input type="text" name="dni" id="dni" class="form-control bg-light border-light" required placeholder="Cédula de identidad">
+                        <h6> <span id="error_dni" class="badge bg-danger"></span></h6>
+
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control bg-light border-light" required placeholder="Introduzca Teléfono de contacto">
+                        <input type="text" name="phone" id="phone" class="form-control bg-light border-light" required placeholder="Introduzca Teléfono de contacto">
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control bg-light border-light" id="emailAddress" required placeholder="Introduzca su correo">
+                        <input type="email" name="email" id="email" class="form-control bg-light border-light"  required placeholder="Introduzca su correo">
+                        <h6> <span id="error_email" class="badge bg-danger"></span></h6>
+
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Dirección de habitación">
+                        <input type="text" name="address" id="address" class="form-control bg-light border-light" required placeholder="Dirección de habitación">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Instrumento de interes">
+                        <input type="text" name="intruments" id="intruments" class="form-control bg-light border-light" required placeholder="Instrumento de interes">
                     </div>                   
                     <div class="form-check my-4">
                         <input id="agree" name="agree" class="form-check-input" type="checkbox">
                         <label class="form-check-label" for="agree">¿Acepta usted  <a href="#">Terminos y condiciones?</a>.</label>
                     </div>
-                    <button class="btn btn-primary shadow-none" type="submit">Registrarse ahora</button>
+                    <button class="btn btn-primary shadow-none" id="submit">Registrarse ahora</button>
                 </form>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,10 +1,11 @@
 import express from 'express';
 import exphbs from "express-handlebars";
+import  morgan from 'morgan'
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
-import MainRoutes from './routes/urls.js'
-import personRoutes from './apps/persons/persons.route.js'
+import MainRoutes from './routes/urls.routes.js'
+import personRoutes from './apps/persons/persons.routes.js'
 
 // Initializations
 
@@ -14,6 +15,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 //middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+app.use(morgan('dev'))
 
 // settings 
 app.use(MainRoutes);
