@@ -10,6 +10,22 @@ export const getPersons = async (req, res) => {
 export const renderForm = (req, res) => {
   res.render("index");
 };
+export const renderPrivate = (req, res) => {
+  res.render("private");
+};
+
+export const pwdPrivate = (req, res) => {
+  const pwd = req.body.password
+  if (pwd === process.env.PASSWORD_PRIVATE ){
+    res.redirect("/private/data/list")
+  }
+};
+
+export const listPrivateData = async (req, res) => {
+  const persons = await Persons.findAll();
+  res.render("list_private", {layout: "base_private", persons});
+}
+
 
 export const validateDni = async (req, res) => {
   const { dni } = req.params;

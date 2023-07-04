@@ -67,6 +67,7 @@ $( function() {
                 $('#address').val('');
                 $('#intruments').val('');
                 $('#verRegistro').val(data)
+                document.getElementById("verRegistro").href=`/registered/${data}`;
                 
             },
             error: function(data){
@@ -74,10 +75,5 @@ $( function() {
             }
         })   
     })
-    $('#verRegistro').on('click', function(e){
-        e.preventDefault();
-        let registro = $('#verRegistro').val()
-        document.getElementById("verRegistro").href=`/registered/${registro}`;
-        document.getElementById('verRegistro').click();
-    })
+
 })
