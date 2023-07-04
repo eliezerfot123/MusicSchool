@@ -1,0 +1,35 @@
+<div class="container">
+
+	<div class="ticket airline">
+		<div class="top">
+			<h1>Constancia de registro</h1>
+			<div class="big">
+				<img src="/images/logo.png" width="100">
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="column">
+
+				<div class="row row-2">
+					<p><span>Nombres y apellidos</span> {{ full_name }}</p>
+					<p class="row--right"><span>Cédula</span>{{ dni }}</p>
+				</div>
+				<div class="row row-3">
+					<p><span>Número de indentificación</span>{{ uid }}</p>
+				</div>
+                <br><br>
+                <center>
+                    <b>
+                    <h6>Este ticket hace constar que usted ha sido pre-inscrito para el proceso de inscripción</h6>
+                    </b>
+                </center>
+			</div>
+            <center>
+                <input type="button" class=".btn" name="imprimir" value="Imprimir" onclick="window.print();">   
+
+            </center>
+
+		</div>
+	</div>
+</div>
+

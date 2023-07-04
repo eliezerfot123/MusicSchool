@@ -8,6 +8,11 @@ export const Persons = sequelize.define('persons', {
         allowNull: false,
         primaryKey: true
     },
+    uid: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        unique: true
+    },
     full_name: {
         type: DataTypes.STRING,
         allowNull: false

@@ -66,10 +66,18 @@ $( function() {
                 $('#email').val('');
                 $('#address').val('');
                 $('#intruments').val('');
+                $('#verRegistro').val(data)
+                
             },
             error: function(data){
                 console.log(data)
             }
         })   
+    })
+    $('#verRegistro').on('click', function(e){
+        e.preventDefault();
+        let registro = $('#verRegistro').val()
+        document.getElementById("verRegistro").href=`/registered/${registro}`;
+        document.getElementById('verRegistro').click();
     })
 })
