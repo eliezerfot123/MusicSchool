@@ -17,13 +17,19 @@ export const renderPrivate = (req, res) => {
 export const pwdPrivate = (req, res) => {
   const pwd = req.body.password
   if (pwd === process.env.PASSWORD_PRIVATE ){
-    res.redirect("/private/data/list")
+    let cookie_name = "value"
+    res.cookie(cookie_name , process.env.PASSWORD_PRIVATE).redirect("/private/data/list");
   }
 };
 
 export const listPrivateData = async (req, res) => {
   const persons = await Persons.findAll();
-  res.render("list_private", {layout: "base_private", persons});
+  if(req.cookies.value === process.env.PASSWORD_PRIVATE){
+    res.render("list_private", {layout: "base_private", persons});
+  }else{
+    res.redirect("/private/data/")
+  }
+  
 }
 
 

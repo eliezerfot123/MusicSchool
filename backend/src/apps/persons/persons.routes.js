@@ -18,6 +18,6 @@ persons.get("/person/e/:email", validateEmail);
 persons.get("/registered/:uid", seeRegistered);
 persons.get("/private/data/", renderPrivate);
 persons.post("/private/data/", pwdPrivate);
-persons.get("/private/data/list", listPrivateData);
+persons.get("/private/data/list", listPrivateData );
 
 export default persons;
