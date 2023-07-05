@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/css/page.pdf.css" media="screen">
+    <link rel="stylesheet" href="/css/page.pdf.print.css" media="print">
+</head>
+<body>
+    {{{body}}}
+
+    <script>
+        document.querySelectorAll('.printbutton').forEach(function(element) {
+            element.addEventListener('click', function() {
+                print();
+            });
+        });
+    </script>
+</body>
+</html>

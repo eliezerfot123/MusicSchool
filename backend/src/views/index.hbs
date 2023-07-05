@@ -1,67 +1,59 @@
-<div class="col-md-5">
-    <div class="hero-wrap h-100">
-        <div class ="hero-bg hero-bg-scroll" style="background-image:url('http://guiaccs.com/wp-content/uploads/2017/08/Escuela-Jose%CC%81-A%CC%81ngel-Lamas_AMU-DESTACADA.jpg');">
-            <div class="hero-mask opacity-8 bg-primary"></div>
-            <div class="hero-content w-100">
-                <div class="container d-flex flex-column min-vh-100">
-                    <div class="row g-0 ">
-                        <div class="col-12 col-md-12 col-lg-12 mx-auto">
-                            <div class="logo lh-base mt-5 mb-5 mb-md-0"> 
-                                <a class="d-flex" href="#" title="Escuela superior de música">
-                                <img class="mx-auto" src="/images/logo.png" alt="Escuela superior de música" width="220">
-                                </a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row g-0 my-auto">
-                        <div class="col-11 col-md-10 col-lg-9 mx-auto ">
-                            <p class="text-4 lh-base">Registro de inscripción periodo 2023</p>
-                            <h1 class="text-9 fw-600 mb-5">Por favor ingrese sus datos cuidadosamente!</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="col-md-7 d-flex flex-column">
     <div class="container my-auto py-5">
         <div class="row g-0">
             <div class="col-11 col-md-10 col-lg-9 col-xl-8 mx-auto">
                 <h3 class="fw-600 mb-4">Ingrese sus datos</h3>
                 <hr/>
-                <form >
+                <form id="form" method="post">
                     <div class="mb-3">
-                        <label for="fullName" class="form-label fw-500">Nombres y apellidos</label>
-                        <input type="text" class="form-control bg-light border-light" required placeholder="Ejemplo: Pedro ">
+                        <input type="text" name="full_name" id="full_name" class="form-control bg-light border-light" required placeholder="Introduzca Nombres y apellidos">
                     </div>
                     <div class="mb-3">
-                        <label for="fullName" class="form-label fw-500">Cédula</label>
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Enter Your Name">
+                        <input type="text" name="dni" id="dni" class="form-control bg-light border-light" required placeholder="Cédula de identidad">
+                        <h6> <span id="error_dni" class="badge bg-danger"></span></h6>
+
                     </div>
                     <div class="mb-3">
-                        <label for="fullName" class="form-label fw-500">Teléfono</label>
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Enter Your Name">
+                        <input type="text" name="phone" id="phone" class="form-control bg-light border-light" required placeholder="Introduzca Teléfono de contacto">
                     </div>
                     <div class="mb-3">
-                        <label for="emailAddress" class="form-label fw-500">Correo Electrónico</label>
-                        <input type="email" class="form-control bg-light border-light" id="emailAddress" required placeholder="Introduzca su correo">
+                        <input type="email" name="email" id="email" class="form-control bg-light border-light"  required placeholder="Introduzca su correo">
+                        <h6> <span id="error_email" class="badge bg-danger"></span></h6>
+
                     </div>
                     <div class="mb-3">
-                        <label for="fullName" class="form-label fw-500">Dirección</label>
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Dirección de habitación">
+                        <input type="text" name="address" id="address" class="form-control bg-light border-light" required placeholder="Dirección de habitación">
                     </div>
                     <div class="mb-3">
-                        <label for="fullName" class="form-label fw-500">Interesado en que instrumento</label>
-                        <input type="text" class="form-control bg-light border-light" id="fullName" required placeholder="Ejemplo: Cuatro">
+                        <input type="text" name="intruments" id="intruments" class="form-control bg-light border-light" required placeholder="Instrumento de interes">
                     </div>                   
                     <div class="form-check my-4">
                         <input id="agree" name="agree" class="form-check-input" type="checkbox">
                         <label class="form-check-label" for="agree">¿Acepta usted  <a href="#">Terminos y condiciones?</a>.</label>
                     </div>
-                    <button class="btn btn-primary shadow-none" type="submit">Create Account</button>
+                    <button class="btn btn-primary shadow-none" id="submit">Registrarse ahora</button>
                 </form>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Ustéd ha sido pre-inscrito para el procedo de inscripción correctamente. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a  id="verRegistro" class="btn btn-primary">Ver y descargar comprobante</a>
+      </div>
+    </div>
+  </div>
 </div>
