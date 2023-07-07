@@ -57,7 +57,6 @@ export const validateEmail = async (req, res) => {
 };
 
 export const createPerson = async (req, res) => {
-  console.log(req.body);
   try {
     const userId = uuidv4();
     const { full_name, dni, phone, email, address, intruments } = req.body;
@@ -85,14 +84,23 @@ export const createPerson = async (req, res) => {
     async function main() {
       // send mail with defined transport object
       const info = await transporter.sendMail({
-        from: `"Fred Foo 👻" ${process.env.USER_MAIL}`, // sender address
+        from: `"Escuela superior de musica José Ángel Lamas 👻" ${process.env.USER_MAIL}`, // sender address
         to: email, // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        subject: "Registro realizado con éxito ✔", // Subject line
+        text: "Registro realizado con éxito, ", // plain text body
+        html: `
+          <b>Hola ${full_name}, Su registro ha sido realizado con éxito</b>
+          <br>
+          usted puede ver su registro en el siguiente enlace
+          <br>
+          <b><a href="${process.env.DOMAIN}/registered/${userId}">Ver constancia de registro</a></b>
+          <br><br>
+          <b>Equipo Escuela superior de musica</b>
+        
+        
+        `, // html body
       });
 
-      console.log("Message sent: %s", info.messageId);
     }
 
     main().catch(console.error);
@@ -118,7 +126,6 @@ export const seeRegistered = async (req, res) => {
 
 /* create for api*/
 export const createPersonV = async (req, res) => {
-  console.log(req.body);
   try {
     const { full_name, dni, phone, email, address, intruments } = req.body;
     const person = await Persons.create({
