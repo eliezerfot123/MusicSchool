@@ -1,0 +1,28 @@
+version: '3.8'
+
+volumes:
+  music_local_postgres_data: {}
+  music_local_postgres_data_backups: {}
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./compose/local/Dockerfile
+    image: music_local_app
+    container_name: music_local_app
+    depends_on:
+      - database
+    ports:
+      - '3000:3000'
+  database:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: music_local_postgres
+    container_name: music_local_postgres
+    volumes:
+      - music_local_postgres_data:/var/lib/postgresql/data
+      - music_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
